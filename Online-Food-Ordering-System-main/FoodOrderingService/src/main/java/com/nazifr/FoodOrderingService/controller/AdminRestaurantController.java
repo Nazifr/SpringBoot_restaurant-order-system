@@ -1,10 +1,10 @@
-package com.mahel.FoodOrderingService.controller;
+package com.nazifr.FoodOrderingService.controller;
 
-import com.mahel.FoodOrderingService.dto.response.ResponseDTO;
-import com.mahel.FoodOrderingService.model.Restaurant;
-import com.mahel.FoodOrderingService.model.User;
-import com.mahel.FoodOrderingService.service.RestaurantService;
-import com.mahel.FoodOrderingService.service.UserService;
+import com.nazifr.FoodOrderingService.dto.response.ResponseDTO;
+import com.nazifr.FoodOrderingService.model.Restaurant;
+import com.nazifr.FoodOrderingService.model.User;
+import com.nazifr.FoodOrderingService.service.RestaurantService;
+import com.nazifr.FoodOrderingService.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
