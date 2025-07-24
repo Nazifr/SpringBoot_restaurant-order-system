@@ -64,10 +64,21 @@ function RegisterForm() {
     if (user && status === StatusCode.SUCCESS) {
       toast.success(message)
       setTimeout(() => {
-        navigate('/account/login'); 
+        navigate('/account/login');
       }, 2000);
     }
   }, [user, navigate]);
+
+  //tried to fix the issue
+  // useEffect(() => {
+  //   if (user && status === StatusCode.SUCCESS) {
+  //     toast.success(message);
+  //     setTimeout(() => {
+  //     //  navigate('/account/login');
+  //     }, 2000);
+  //   }
+  // }, [user, status, message, navigate]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -150,6 +161,7 @@ function RegisterForm() {
         </Grid>
         <Button sx={{ marginTop: 2, padding: '1rem' }} fullWidth type='submit' variant='contained'>Register</Button>
       </form>
+
       <Typography variant='body2' align='center' sx={{ mt: 3 }}>
         Already have an account?
         <Button size='small' onClick={() => navigate('/account/login')}>Login</Button>

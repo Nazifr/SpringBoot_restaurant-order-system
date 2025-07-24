@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchResturants } from '../../redux/slices/restaurantSlice';
+import {fetchRestaurants} from '../../redux/slices/restaurantSlice';
 import RestaurantCard from './RestaurantCard';
 
 const RestaurantList = () => {
@@ -9,7 +9,7 @@ const RestaurantList = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchResturants())
+        dispatch(fetchRestaurants())
     }, [dispatch])
 
 

@@ -2,7 +2,8 @@ const StatusCode = {
     LOADING: 'loading',
     SUCCESS: 'success',
     FAILED: 'failed',
-    IDEL: 'idel'
+    IDLE: 'idle',
+    ERROR: 'error',
 }
 
 export default StatusCode;

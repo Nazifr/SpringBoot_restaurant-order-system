@@ -16,12 +16,17 @@ function Auth() {
   
   const { pathname } = location
 
-  const handleOnClose = () => {
+    console.log("Current Path:", pathname);
+
+    const handleOnClose = () => {
       navigate('/')
   }
     
   return (
+      //might be causing the login page issue
     <Modal onClose={handleOnClose} open={ pathname=== "/account/register" || pathname=== "/account/login"}>
+
+
       <Box sx={style}>
           {
             pathname === "/account/register" ? <RegisterForm /> : <LoginForm />
@@ -32,3 +37,9 @@ function Auth() {
 }
 
 export default Auth
+// <Modal
+// onClose={handleOnClose}
+// open={ pathname=== "/account/register" || pathname=== "/account/login"}
+// disableAutoFocus
+// disableEnforceFocus
+// >

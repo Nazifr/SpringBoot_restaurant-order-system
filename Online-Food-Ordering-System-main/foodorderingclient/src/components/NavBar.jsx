@@ -12,6 +12,8 @@ import { useNavigate } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDispatch, useSelector } from 'react-redux';
 import { userProfile } from '../redux/slices/authSlice';
+import { useLocation } from 'react-router-dom';
+
 
 const NavBar = () => {
 
@@ -23,13 +25,31 @@ const NavBar = () => {
   const theme = useTheme();
   const [showSearch, setShowSearch] = useState(false);
 
+  //might be causing the login page issue
+  // useEffect(() => {
+  //   if (!token && !user) {
+  //     navigate('/account/login')
+  //   } else {
+  //     dispatch(userProfile())
+  //   }
+  // }, [])
+
+  const location = useLocation();
+
   useEffect(() => {
-    if (!token && !user) {
-      navigate('/account/login')
-    } else {
-      dispatch(userProfile())
+    if (
+        !token &&
+        !user &&
+        location.pathname !== '/account/login' &&
+        location.pathname !== '/account/register'
+    ) {
+      navigate('/account/login');
+    } else if (token && !user) {
+      dispatch(userProfile());
     }
-  }, [])
+  }, [token, user, dispatch, navigate, location.pathname]);
+
+
 
   return (
     <div className={` w-full h-[80px] lg:px-16 flex sticky top-0 z-50 left-0 justify-between items-center shadow-md px-5`}

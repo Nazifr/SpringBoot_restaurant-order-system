@@ -1,6 +1,6 @@
 # Online Food Ordering System
 
-### Technologhy
+### Technology
 <ul>
   <li>React</li>
   <li>Spring Boot</li>

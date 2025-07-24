@@ -6,17 +6,17 @@ const initialState = {
     restaurants: [],
     loading: false,
     error: null,
-    status: StatusCode.IDEL,
+    status: StatusCode.IDLE,
     message: null,
     restaurant: null,
     userRestaurant: null,
     events: [],
     restaurantEvents: [],
-    catergory: [],
+    category: [],
 }
 
 //async thunk for fetch all restaurants
-export const fetchResturants = createAsyncThunk('restaurants/fetchRestaurants', async (_, { isRejectedWithValue }) => {
+export const fetchRestaurants = createAsyncThunk('restaurants/fetchRestaurants', async (_, { isRejectedWithValue }) => {
     try {
        const response = await api.get('/restaurants')
        return response.data
@@ -25,7 +25,7 @@ export const fetchResturants = createAsyncThunk('restaurants/fetchRestaurants', 
     }
 })
 
-//async thunk for fetch resturant by id
+//async thunk for fetch restaurant by id
 export const fetchRestaurantById = createAsyncThunk('restaurants/fetchRestaurantById', async (restaurantId, { isRejectedWithValue }) => {
   try {
      const response = await api.get(`/restaurants/${restaurantId}`)
@@ -155,18 +155,18 @@ const restaurantSlice = createSlice({
     extraReducers: (builder) => {
         builder
           //fetch all restaurants
-          .addCase(fetchResturants.pending, (state) => {
+          .addCase(fetchRestaurants.pending, (state) => {
             state.loading = true;
             state.error = null;
             state.status = StatusCode.LOADING;
           })
-          .addCase(fetchResturants.fulfilled, (state, action) => {
+          .addCase(fetchRestaurants.fulfilled, (state, action) => {
             state.loading = false;
             state.message = action.payload.message;
             state.restaurants = action.payload.payload;
             state.status = StatusCode.SUCCESS;
           })
-          .addCase(fetchResturants.rejected, (state, action) => {
+          .addCase(fetchRestaurants.rejected, (state, action) => {
             state.loading = false;
             state.error = action.payload;
             state.status = StatusCode.ERROR;

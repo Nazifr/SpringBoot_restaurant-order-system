@@ -9,19 +9,19 @@ const carouselItems = [
         id: 1,
         img: PizzaImg,
         title: 'Hot Pizza',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+        description: 'Fresh out of the oven, our hot pizza is loaded with melted cheese, crispy pepperoni, and a golden crust that’s perfectly crunchy. One bite and you’ll be hooked!'
     },
     {
         id: 2,
         img: NoodlesImg,
         title: 'Delicious Noodles',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+        description: 'Our noodles are stir-fried to perfection—steamy, saucy, and packed with bold flavors. Each bite is a warm, savory delight you won’t want to end.'
     },
     {
         id: 3,
         img: RoastChickenImg,
         title: 'Roast Chicken',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+        description: 'Tender, juicy roast chicken with golden, crispy skin—seasoned just right and roasted to perfection. It’s comfort food at its finest.'
     },
 ]
 

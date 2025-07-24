@@ -58,7 +58,7 @@ const initialState = {
     token: localStorage.getItem('jwtToken'),
     loading: false,
     error: null,
-    status: StatusCode.IDEL
+    status: StatusCode.IDLE
 }
 
 const authSlice = createSlice({
@@ -73,7 +73,7 @@ const authSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            //regsiter user
+            //register user
             .addCase(registerUser.pending, (state) => {
                 state.loading = true;
                 state.error = null;
